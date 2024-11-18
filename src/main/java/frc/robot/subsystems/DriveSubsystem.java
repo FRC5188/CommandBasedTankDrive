@@ -12,7 +12,7 @@ public class DriveSubsystem extends SubsystemBase {
 
   // TODO: Instantiate motor controller group objects
 
-  // TODO: Declare differential drive object
+  // TODO: Instantiate differential drive object
   
   
   /** Creates a new DriveSubsystem. */

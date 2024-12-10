@@ -4,28 +4,40 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class DriveSubsystem extends SubsystemBase {
   
   // TODO: Instantiate motor controller objects
+private final TalonFX _frontLeftDriveMotor = new TalonFX(1);
+private final TalonFX _backLeftDriveMotor = new TalonFX(2);
+private final TalonFX _frontRightDriveMotor = new TalonFX(3);
+private final TalonFX _backRightDriveMotor = new TalonFX(4); 
 
-  // TODO: Instantiate motor controller group objects
 
-  // TODO: Instantiate differential drive object
-  
-  
+// TODO: Instantiate motor controller group objects
+private final MotorControllerGroup _leftDriveMotors = new MotorControllerGroup
+      (_frontLeftDriveMotor, _backLeftDriveMotor);
+private final MotorControllerGroup _rightDriveMotors = new MotorControllerGroup
+      (_frontRightDriveMotor, _backRightDriveMotor);
+
+
+      // TODO: Instantiate differential drive object
+private DifferentialDrive _drive = new DifferentialDrive(_leftDriveMotors, _rightDriveMotors);
+
   /** Creates a new DriveSubsystem. */
   public DriveSubsystem() {
 
     // TODO: Call any necessary motor controller group methods
-
+_rightDriveMotors.setInverted(true);
   }
 
   // TODO: Create a new method that takes in a double (decimal number) called speed
   //       and a double called rotate, and passes these values into the DifferentialDrive
   //       arcadeDrive method that we used before
-
+public void speedAndRotate()
   
   @Override
   public void periodic() {
